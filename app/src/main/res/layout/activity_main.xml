@@ -1,18 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:orientation="horizontal"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home"
+            android:layout_gravity="top|left"/>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Dictionary"
+            android:textSize="70px"
+            android:textAlignment="center"
+            android:gravity="center"
+            />
+
+        <ImageButton
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dictionary"
+            android:layout_gravity="top|right"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|top">
+
+            <ImageButton
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:layout_margin="50px"
+                android:background="@drawable/record"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border"
+                android:padding="30px"
+                android:gravity="center"
+                >
+
+                <EditText
+                    android:layout_width="800px"
+                    android:layout_height="100px"
+                    android:hint="입력창"
+                    android:textSize="15px"
+                    android:textColorHint="#D9D9D9"
+                    android:background="@drawable/border"
+                    android:padding="20px"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="번역"
+                    android:textSize="20px"
+                    android:padding="20px"
+                    android:background="#514FA0"
+                    android:textColor="@color/white"
+                    android:layout_margin="30px"
+                    />
+
+                <TextView
+                    android:layout_width="800px"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:hint="번역 결과"
+                    android:padding="20px"
+                    android:textSize="20px"
+                    android:textColorHint="#D9D9D9"/>
+                
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

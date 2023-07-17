@@ -10,4 +10,4 @@
 
 ### 피그마 설계도
 
-<img width="744" alt="스크린샷 2023-07-12 오후 5 22 37" src="https://github.com/tjdwns4537/DictionaryAndroid/assets/63576379/54103ee9-e41a-43cd-b630-a20c431bd6bf">
+<img width="744" alt="스크린샷 2023-07-17 오후 1 14 02" src="https://github.com/tjdwns4537/DictionaryAndroid/assets/63576379/f054cf64-2938-4b21-86aa-f8cca30de309">
