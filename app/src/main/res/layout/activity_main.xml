@@ -12,10 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="150px"
         android:orientation="horizontal"
+        android:padding="20px"
+        android:background="@drawable/border"
         >
 
         <ImageButton
-            android:layout_width="150px"
+            android:layout_width="100px"
             android:layout_height="wrap_content"
             android:background="@drawable/home"
             android:layout_gravity="top|left"/>
@@ -49,11 +51,64 @@
             android:orientation="vertical"
             android:gravity="center|top">
 
-            <ImageButton
-                android:layout_width="150px"
-                android:layout_height="150px"
-                android:layout_margin="50px"
-                android:background="@drawable/record"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:background="@drawable/border_right"
+                    >
+
+                    <ImageButton
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_margin="50px"
+                        android:background="@drawable/record"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="녹음시작"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    >
+
+                    <ImageButton
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_margin="50px"
+                        android:background="@drawable/record"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="녹음종료"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,7 +123,7 @@
                     android:layout_width="800px"
                     android:layout_height="100px"
                     android:hint="입력창"
-                    android:textSize="15px"
+                    android:textSize="15dp"
                     android:textColorHint="#D9D9D9"
                     android:background="@drawable/border"
                     android:padding="20px"
@@ -78,8 +133,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="번역"
-                    android:textSize="20px"
-                    android:padding="20px"
+                    android:textSize="30px"
+                    android:padding="10px"
                     android:background="#514FA0"
                     android:textColor="@color/white"
                     android:layout_margin="30px"
@@ -91,7 +146,7 @@
                     android:background="@drawable/border"
                     android:hint="번역 결과"
                     android:padding="20px"
-                    android:textSize="20px"
+                    android:textSize="15dp"
                     android:textColorHint="#D9D9D9"/>
                 
             </LinearLayout>
