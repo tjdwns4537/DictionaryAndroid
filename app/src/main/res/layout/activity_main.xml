@@ -76,7 +76,7 @@
                         android:id="@+id/record_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="녹음시작"
+                        android:text="녹음을 시작하시려면 위의 아이콘을 눌러주세요."
                         android:layout_gravity="center"
                         android:textStyle="bold"
                         />

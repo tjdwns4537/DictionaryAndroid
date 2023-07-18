@@ -64,16 +64,19 @@ class MainActivity : AppCompatActivity() {
             if (isRecording) {
                 // 녹음 중일 때의 동작
                 isRecording = false
-                audioRecordImageBtn.setImageResource(R.drawable.record)
-                audioRecordImageBtn.setBackgroundColor(Color.RED)
-                audioRecordText.text = "녹음"
+                audioRecordImageBtn.setBackgroundResource(R.drawable.record)
+                audioRecordText.text = ""
+                audioRecordText.setTextColor(R.drawable.record)
+                audioRecordText.text = "녹음을 시작하시려면 위의 아이콘을 눌러주세요."
+
                 stopRecording()
             } else {
                 // 녹음 중이 아닐 때의 동작
                 if (checkAudioPermission()) {
                     isRecording = true
-                    audioRecordImageBtn.setImageResource(R.drawable.record)
-                    audioRecordText.text = "녹음 중"
+                    audioRecordImageBtn.setBackgroundResource(R.drawable.recording)
+                    audioRecordText.text = "녹음중"
+
                     startRecording()
                 }
             }
@@ -184,14 +187,14 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        playIcon.setImageResource(R.drawable.record)
+//        playIcon.setImageResource(R.drawable.record)
         isPlaying = true
         mediaPlayer?.setOnCompletionListener { stopAudio() }
     }
 
     // 녹음 파일 중지
     private fun stopAudio() {
-        playIcon.setImageResource(R.drawable.record)
+//        playIcon.setImageResource(R.drawable.record)
         isPlaying = false
         mediaPlayer?.stop()
         mediaPlayer?.reset()
