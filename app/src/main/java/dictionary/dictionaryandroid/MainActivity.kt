@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 isRecording = false
                 audioRecordImageBtn.setBackgroundResource(R.drawable.record)
                 audioRecordText.text = ""
-                audioRecordText.setTextColor(R.drawable.record)
+                audioRecordText.setTextColor(R.drawable.record_red)
                 audioRecordText.text = "녹음을 시작하시려면 위의 아이콘을 눌러주세요."
 
                 stopRecording()
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 // 녹음 중이 아닐 때의 동작
                 if (checkAudioPermission()) {
                     isRecording = true
-                    audioRecordImageBtn.setBackgroundResource(R.drawable.recording)
+                    audioRecordImageBtn.setBackgroundResource(R.drawable.record_green)
                     audioRecordText.text = "녹음중"
 
                     startRecording()
