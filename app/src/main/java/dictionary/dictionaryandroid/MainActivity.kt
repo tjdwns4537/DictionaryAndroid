@@ -8,10 +8,14 @@ import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.net.Uri
 import android.os.Bundle
+import android.speech.RecognitionListener
+import android.speech.RecognizerIntent
+import android.speech.SpeechRecognizer
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -216,5 +220,67 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer?.reset()
         mediaPlayer?.release()
         mediaPlayer = null
+    }
+
+    // 음성 인식 결과를 처리하는 함수
+    private fun processSpeechRecognitionResult(result: String) {
+        // 음성 인식 결과를 한국어로 번역하여 처리하는 기능을 추가하시면 됩니다.
+        // 여기서는 번역하지 않고 결과를 그대로 출력합니다.
+        Toast.makeText(this, "인식된 텍스트: $result", Toast.LENGTH_SHORT).show()
+    }
+
+    // 음성 인식 시작 함수
+    private fun startSpeechRecognition() {
+        val speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+        val speechRecognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.US)
+
+        speechRecognizer.setRecognitionListener(object : RecognitionListener {
+            override fun onReadyForSpeech(params: Bundle?) {
+                // 음성 인식 준비 완료
+            }
+
+            override fun onBeginningOfSpeech() {
+                // 음성 인식 시작
+            }
+
+            override fun onRmsChanged(rmsdB: Float) {
+                // 음성 레벨 변경 (오디오 레벨 표시 등)
+            }
+
+            override fun onBufferReceived(buffer: ByteArray?) {
+                // 녹음된 음성 데이터를 받음
+            }
+
+            override fun onEndOfSpeech() {
+                // 음성 인식 종료
+            }
+
+            override fun onError(error: Int) {
+                // 오류 발생시 처리 (오류 코드에 따라 다양한 오류 처리 가능)
+            }
+
+            override fun onResults(results: Bundle?) {
+                // 음성 인식 결과 처리
+                val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                if (matches != null && matches.isNotEmpty()) {
+                    val recognizedText = matches[0]
+                    processSpeechRecognitionResult(recognizedText)
+                }
+            }
+
+            override fun onPartialResults(partialResults: Bundle?) {
+                // 부분적인 음성 인식 결과를 처리 (실시간 인식에서 활용 가능)
+            }
+
+            override fun onEvent(eventType: Int, params: Bundle?) {
+                // 이벤트 처리
+            }
+        })
+
+        // 음성 인식 시작
+        speechRecognizer.startListening(speechRecognizerIntent)
+
     }
 }
