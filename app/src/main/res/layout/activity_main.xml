@@ -41,100 +41,101 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center|top"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center|top">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp"
-                    android:gravity="center"
-                    android:background="#FFFFFF"
-                    >
-
-                    <ImageButton
-                        android:id="@+id/record_image"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:layout_margin="50px"
-                        android:background="@drawable/record"/>
-
-                    <TextView
-                        android:id="@+id/record_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="녹음을 시작하시려면 위의 아이콘을 눌러주세요."
-                        android:layout_gravity="center"
-                        android:textStyle="bold"
-                        />
-
-                </LinearLayout>
-            </LinearLayout>
+            android:layout_height="wrap_content" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/border"
-                android:padding="30px"
+                android:padding="10dp"
                 android:gravity="center"
+                android:background="#FFFFFF"
                 >
 
-                <EditText
-                    android:layout_width="800px"
-                    android:layout_height="100px"
-                    android:hint="입력창"
-                    android:textSize="15dp"
-                    android:textColorHint="#D9D9D9"
-                    android:background="@drawable/border"
-                    android:padding="20px"
-                    />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="번역"
-                    android:textSize="30px"
-                    android:padding="10px"
-                    android:background="#514FA0"
-                    android:textColor="@color/white"
-                    android:layout_margin="30px"
-                    />
+                <ImageButton
+                    android:id="@+id/record_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:layout_margin="50px"
+                    android:background="@drawable/record"/>
 
                 <TextView
-                    android:layout_width="800px"
+                    android:id="@+id/record_text"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:hint="번역 결과"
-                    android:padding="20px"
-                    android:textSize="15dp"
-                    android:textColorHint="#D9D9D9"/>
-                
-            </LinearLayout>
+                    android:text="녹음을 시작하시려면 위의 아이콘을 눌러주세요."
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    />
 
-            <!--녹음내역들이 담길 리사이클러뷰-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="409dp"
-                android:layout_height="620dp"
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border"
+            android:padding="30px"
+            android:gravity="center"
+            >
+
+            <EditText
+                android:layout_width="800px"
+                android:layout_height="100px"
+                android:hint="입력창"
+                android:textSize="15dp"
+                android:textColorHint="#D9D9D9"
+                android:background="@drawable/border"
+                android:padding="20px"
                 />
 
-        </LinearLayout>
-    </ScrollView>
+            <Button
+                android:id="@+id/translate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="번역"
+                android:textSize="30px"
+                android:padding="10px"
+                android:background="#514FA0"
+                android:textColor="@color/white"
+                android:layout_margin="30px"
+                />
 
+            <TextView
+                android:layout_width="800px"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:hint="번역 결과"
+                android:padding="20px"
+                android:textSize="15dp"
+                android:textColorHint="#D9D9D9"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <!--녹음내역들이 담길 리사이클러뷰-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </ScrollView>
 
 
 </LinearLayout>
