@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dictionary.dictionaryandroid.R
 import dictionary.dictionaryandroid.adapter.AudioAdapter
+import dictionary.dictionaryandroid.service.Translate
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -225,8 +226,11 @@ class MainActivity : AppCompatActivity() {
     // 음성 인식 결과를 처리하는 함수
     private fun processSpeechRecognitionResult(result: String) {
         // 음성 인식 결과를 한국어로 번역하여 처리하는 기능을 추가하시면 됩니다.
+        Translate.openAPI(result)
+
         // 여기서는 번역하지 않고 결과를 그대로 출력합니다.
         Toast.makeText(this, "인식된 텍스트: $result", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "번역된 텍스트: $result", Toast.LENGTH_SHORT).show()
     }
 
     // 음성 인식 시작 함수

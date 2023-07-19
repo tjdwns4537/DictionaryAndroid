@@ -13,16 +13,18 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
+import dictionary.dictionaryandroid.helper.NaverAPI;
+
 public class Translate {
 
-    public void openAPI() {
-        String clientId = "YOUR_CLIENT_ID";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "YOUR_CLIENT_SECRET";//애플리케이션 클라이언트 시크릿값";
+    public static void openAPI(String inputText) {
+        String clientId = NaverAPI.ClientID;//애플리케이션 클라이언트 아이디값";
+        String clientSecret = NaverAPI.ClientSecretKey;//애플리케이션 클라이언트 시크릿값";
 
         String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
         String text;
         try {
-            text = URLEncoder.encode("안녕하세요. 오늘 기분은 어떻습니까?", "UTF-8");
+            text = URLEncoder.encode(inputText, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException("인코딩 실패", e);
         }
