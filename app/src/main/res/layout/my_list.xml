@@ -9,92 +9,119 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border"
         android:orientation="vertical"
         >
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            >
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:layout_height="400dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/recently_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_below"
                     android:text="최근 검색"
-                    />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recently_recyclerView"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9"
+                    >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recently_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_below"
+                        />
+                </ScrollView>
+
                 <TextView
                     android:id="@+id/search_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="많이 조회한 검색"
+                    android:text="나의 검색 순위"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/count_recyclerView"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9"
+                    >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/count_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_below"
+                        />
+                </ScrollView>
+
                 <TextView
                     android:id="@+id/recommend_word_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="추천 단어"
-                    />
+                    android:text="오늘의 단어"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recommend_word_recyclerView"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9"
+                    >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recommend_word_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_below"
+                        />
+                </ScrollView>
+
                 <TextView
                     android:id="@+id/recommend_sentence_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="추천 단어"
-                    />
+                    android:text="오늘의 문장"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recommend_sentence_recyclerView"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9"
+                    >
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recommend_sentence_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_below"
+                        />
+                </ScrollView>
+
+            </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
-
-
-
 </LinearLayout>
