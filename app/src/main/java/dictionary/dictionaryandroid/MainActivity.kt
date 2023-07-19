@@ -1,6 +1,7 @@
 package dictionary.dictionaryandroid;
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.media.MediaPlayer
@@ -26,7 +27,9 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     /**xml 변수 */
     private lateinit var audioRecordImageBtn: ImageButton
+    private lateinit var myListImageBtn: ImageButton
     private lateinit var audioRecordText: TextView
+    private lateinit var homeBtn: ImageButton
 
     /**오디오 파일 관련 변수 */
     // 오디오 권한
@@ -59,6 +62,19 @@ class MainActivity : AppCompatActivity() {
     private fun init() {
         audioRecordImageBtn = findViewById(R.id.record_image)
         audioRecordText = findViewById(R.id.record_text)
+        myListImageBtn = findViewById(R.id.my_list_button)
+        homeBtn = findViewById(R.id.home_btn)
+
+
+        myListImageBtn.setOnClickListener(View.OnClickListener { View ->
+            val intent = Intent(this, MyListActivity::class.java)
+            startActivity(intent)
+        })
+
+        homeBtn.setOnClickListener(View.OnClickListener { View ->
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        })
 
         audioRecordImageBtn.setOnClickListener(View.OnClickListener { view ->
             if (isRecording) {
